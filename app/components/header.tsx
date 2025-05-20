@@ -1,21 +1,48 @@
-import Clock from "./clock";  
+import logo from "/logo.png";
+import Clock from "./clock";
 export default function Header() {
   return (
     <>
       <Clock />
       <div className="flex justify-between  pt-16 pb-4">
-        <img
-          className="h-10"
-          src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/logo.fbda5502.png"
-          alt="Caesars Kingdom"
-        />
+        <img className="h-10" src={logo} alt="Caesars Kingdom" />
         <div className="flex items-center justify-center gap-4">
           <button className="w-20 rounded-md bg-amber-600">Login</button>
           <button className="w-20 rounded-md bg-amber-600">Sign Up</button>
         </div>
       </div>
-      <div className="flex items-center justify-between divide-x divide-gray-400 text-lg font-semibold gap-8 ">
-        <div className="flex-1 text-center">Home</div>
+      <div className="flex items-center justify-between divide-x divide-gray-400 text-lg font-semibold gap-8 pl-4 ">
+        <div className="text-center border-r-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="30"
+            height="30"
+            viewBox="0,0,256,256"
+          >
+            <g
+              fill-opacity="1"
+              fill="#ffffff"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+            >
+              <g transform="scale(9.84615,9.84615)">
+                <path d="M20,2.03125c-0.55078,0 -1,0.44922 -1,1v4.78125l-5.28125,-5.28125c-0.39062,-0.39062 -1.04687,-0.39062 -1.4375,0l-11.71875,11.75c-0.39062,0.39063 -0.39062,1.01563 0,1.40625c0.39063,0.39063 1.01563,0.39063 1.40625,0l11.03125,-11.03125l11.0625,11.0625c0.19531,0.19531 0.46094,0.3125 0.71875,0.3125c0.25781,0 0.49219,-0.11719 0.6875,-0.3125c0.39063,-0.39062 0.39063,-1.01562 0,-1.40625l-3.46875,-3.46875v-7.8125c0,-0.55078 -0.44922,-1 -1,-1zM13,6.5l-11,11v5.5c0,1.65625 1.34375,3 3,3h16c1.65625,0 3,-1.34375 3,-3v-5.5zM11,16h4c0.55078,0 1,0.44922 1,1v6c0,0.55078 -0.44922,1 -1,1h-4c-0.55078,0 -1,-0.44922 -1,-1v-6c0,-0.55078 0.44922,-1 1,-1z"></path>
+              </g>
+            </g>
+          </svg>
+        </div>
         <div className="flex-1 text-center">Lobby</div>
         <div className="flex-1 text-center">Favorite</div>
         <div className="flex-1 text-center">Fishing</div>

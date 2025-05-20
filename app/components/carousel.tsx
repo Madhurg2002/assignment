@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
-  { id: 1, url: "http://okay.jkgame.vip/web_game/plat/config/hall/caesarskingdom/pc_bigAdvertUI/2658.png" },
-  { id: 2, url: "http://okay.jkgame.vip/web_game/plat/config/hall/caesarskingdom/pc_bigAdvertUI/2066.png" },
-  { id: 3, url: "http://okay.jkgame.vip/web_game/plat/config/hall/caesarskingdom/pc_bigAdvertUI/2655.png" },
-  { id: 4, url: "http://okay.jkgame.vip/web_game/plat/config/hall/caesarskingdom/pc_bigAdvertUI/0.png" },
+  { id: 1, src: "/1.png" },
+  { id: 2, src: "/2.png" },
+  { id: 3, src: "/3.png" },
+  { id: 4, src: "/4.png" },
+  { id: 5, src: "/5.png" },
 ];
 
-const Carousel = () => {
+export default function Carousel() {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(0);
   const [direction, setDirection] = useState("right");
@@ -40,13 +41,9 @@ const Carousel = () => {
     if (index === current) {
       return "translate-x-0";
     } else if (index === prev) {
-      return direction === "right"
-        ? "-translate-x-full"
-        : "translate-x-full";
+      return direction === "right" ? "-translate-x-full" : "translate-x-full";
     } else {
-      return direction === "right"
-        ? "translate-x-full"
-        : "-translate-x-full";
+      return direction === "right" ? "translate-x-full" : "-translate-x-full";
     }
   };
 
@@ -56,11 +53,11 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <img
             key={slide.id}
-            src={slide.url}
+            src={slide.src}
             alt={`Slide ${index + 1}`}
-            className={`absolute top-0 left-0 w-full h-full transition-transform  duration-500 ease-in-out  ${
-              getTranslateClass(index)
-            } ${index === current || index === prev ? "z-1" : "z-0"}`}
+            className={`absolute top-0 left-0 w-full h-full transition-transform  duration-500 ease-in-out  ${getTranslateClass(
+              index
+            )} ${index === current || index === prev ? "z-1" : "z-0"}`}
           />
         ))}
       </div>
@@ -100,6 +97,4 @@ const Carousel = () => {
       </div>
     </div>
   );
-};
-
-export default Carousel;
+}

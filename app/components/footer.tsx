@@ -1,18 +1,20 @@
+import logo from "/logo.png";
+import install from "/install.png";
+import play from "/play.png";
+import customerlogo from "/customer  logo.png";
+import customer from "/customer.png";
+import about from "/about.png";
 export default function footer() {
   return (
     <div className="flex items-center justify-between max-h-30 pt-16 pb-4">
-      <img
-        className=""
-        src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/logo.fbda5502.png"
-        alt="Caesars Kingdom"
-      />
-      <img src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/install.67092c38.png" />
-      <img src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/playnow.551263be.png" />
+      <img className="" src={logo} alt="Caesars Kingdom" />
+      <img src={install} />
+      <img src={play} />
       <div className="flex items-center justify-center gap-0">
-        <img src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/5.55d5843f.png" />
-        <img src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/1.bc75f3b2.png" />
+        <img src={customerlogo} />
+        <img src={customer} />
       </div>
-      <img src="http://okay.jkgame.vip/web_game/caesarskingdom_pc/assets/2.8138f5ec.png" />
+      <img src={about} />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from "react";
 
 type TilesProps = {
-  link: string;
+  src: string;
   name: string;
   category: number;
 };
 
-export default function Tile({ link, name, category }: TilesProps) {
+export default function Tile({ src, name, category }: TilesProps) {
   // Determine text based on category
   let categoryText = "";
   switch (category) {
@@ -22,17 +22,23 @@ export default function Tile({ link, name, category }: TilesProps) {
 
   return (
     <div className="relative group">
-      <div className="overflow-hidden rounded-lg border-4 border-gray-300">
+      <div className="overflow-hidden rounded-lg border-4 border-amber-600">
         <img
           className="w-full h-full object-cover transition-all duration-300"
-          src={link}
+          src={src}
           alt={name}
         />
       </div>
 
       {/* Category text always visible on the top right */}
       {categoryText && (
-        <div className="absolute top-2 left-2 bg-gray-300 border-gray-300  text-white text-sm px-2 py-1 rounded">
+        <div
+          className={
+            categoryText === "New"
+              ? "absolute top-2 left-2 bg-amber-600 border-amber-600 text-green-500 text-xl px-2 py-1 rounded"
+              : "absolute top-2 left-2 bg-amber-600 border-amber-600 text-white text-xl px-2 py-1 rounded"
+          }
+        >
           {categoryText}
         </div>
       )}
